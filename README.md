@@ -1,13 +1,45 @@
-# lipsync-wav2lip
+# LipSync-Wav2Lip
 
+## 🔧 Setup and Execution
 
-# commands
-**1. First, execute the generate.py for audio generation**
-**2. Clone the wav2lip repo**
-**3. Download the model from the repo and put it in the checkpoints directory**
-**4. Create a virtual environment**
-**5. Install all requirements from requirements**
-**6. Put all the generated audio, images in the wav2lip directory**
-**7. Execute the below commands**
+Follow these steps to set up and run the project:
 
+### 1⃣ **Generate Audio**
+Run `generate.py` to create the required audio files for lip-syncing.
+
+### 2⃣ **Clone the Wav2Lip Repository**
+```sh
+git clone https://github.com/Rudrabha/Wav2Lip.git
+cd Wav2Lip
+```
+
+### 3⃣ **Download and Place Model Checkpoints**
+- Download the pre-trained model from the official Wav2Lip repository.
+- Move the model file (`wav2lip.pth`) to the `checkpoints/` directory.
+
+### 4⃣ **Create a Virtual Environment**
+```sh
+python -m venv wav2lip_env
+```
+Activate the virtual environment:  
+- **Windows**: `wav2lip_env\Scripts\activate`  
+
+### 5⃣ **Install Dependencies**
+```sh
+pip install -r requirements.txt
+```
+
+### 6⃣ **Prepare Input Files**
+Place the generated audio and images in the **Wav2Lip** directory.
+
+### 7⃣ **Run the Inference Script**
+Execute the following command to generate the lip-synced video:  
+```sh
 python inference.py --checkpoint_path checkpoints/wav2lip.pth --face image.jpg --audio audio.wav --outfile output_video_new.mp4
+```
+
+## 📌 Notes
+- Ensure that `image.jpg` and `audio.wav` exist in the working directory.
+- If you face dependency issues, check the correct versions of `torch`, `torchvision`, and `numpy`.
+- For GPU support, install `torch` and `torchvision` versions compatible with your CUDA version.
+
